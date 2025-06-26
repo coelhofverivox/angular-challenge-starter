@@ -4,7 +4,11 @@ import { User } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private users: User[] = [];
+  private users: User[] = [
+    { id: 1, name: 'Alice Johnson', email: 'alice.johnson@example.com' },
+    { id: 2, name: 'Bob Smith', email: 'bob.smith@example.com' },
+    { id: 3, name: 'Carol Williams', email: 'carol.williams@example.com' }
+  ];
   private usersSubject = new BehaviorSubject<User[]>(this.users);
 
   getUsers(): Observable<User[]> {
